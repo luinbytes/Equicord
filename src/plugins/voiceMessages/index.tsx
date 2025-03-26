@@ -266,7 +266,7 @@ function Modal({ modalProps }: { modalProps: ModalProps; }) {
                         const filename = "voice-message-converted.ogg";
 
                         ffmpegInstance.writeFile(filename, await fetchFile(blobUrl));
-                        ffmpegInstance.exec(["-i", filename, "-c:a", "libopus", "-b:a", "128k", "-vbr", "on", filename]);
+                        ffmpegInstance.exec(["-y", "-i", filename, "-c:a", "libopus", "-b:a", "128k", "-vbr", "on", filename]);
 
                         const data = await ffmpegInstance.readFile(filename);
                         const convertedBlob = new Blob([data], { type: "audio/ogg; codecs=opus" });
