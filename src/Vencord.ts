@@ -58,7 +58,7 @@ async function syncSettings() {
                 title: "Cloud Settings",
                 body: "Cloud sync was disabled because this account isn't connected to the Vencloud App. You can enable it again by connecting this account in Cloud Settings. (note: it will store your preferences separately)",
                 color: "var(--yellow-360)",
-                onClick: () => SettingsRouter.open("VencordCloud")
+                onClick: () => SettingsRouter.open("EquicordCloud")
             });
             // Disable cloud sync globally
             Settings.cloud.authenticated = false;
